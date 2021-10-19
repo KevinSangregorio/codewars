@@ -7,17 +7,19 @@ function solution(number) {
   let accum3 = 0;
   let accum5 = 0;
   let accum = [];
+  
 
-  if (number >= 0) {
+  if (number > 0) {
     do {
         accum3 += 3; 
-        accum.push(accum3)
-    } while (accum3 <= number);
+        accum.push(accum3);
+    } while (accum3 < (number - 3))
+
     do {
         accum5 += 5; 
-        accum.push(accum5)
+        accum.push(accum5);
         console.log(accum);
-    } while (accum5 <= number);
+    } while (accum5 < (number - 5));
 
     const eliminoRepetidos = new Set(accum);
     console.log(eliminoRepetidos);
@@ -35,4 +37,4 @@ function solution(number) {
   return result;
 }
 
-console.log(solution(15)); 
+console.log(solution(10)); 
